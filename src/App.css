@@ -5,17 +5,20 @@
 body{
   overflow-x: hidden;
 }
+html{
+  scroll-behavior: smooth;
+}
 ::-webkit-scrollbar{
   width: 10px;
   z-index: 1;
 
 }
 ::-webkit-scrollbar-track{
-  background-color: #5991db;
   z-index: 1;
   
+  background-color: #012732;
 }
 ::-webkit-scrollbar-thumb{
-  background-color: #012732;
+  background-color: #5991db;
   border-radius: 30px;
 }

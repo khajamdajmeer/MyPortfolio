@@ -1,0 +1,21 @@
+.projects{
+    width: unset;
+    padding-top: 20px;
+    z-index: 10;
+    background-color: aliceblue;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.projectheading{
+    background-color: aliceblue;
+
+    padding-top: 20px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+
+}

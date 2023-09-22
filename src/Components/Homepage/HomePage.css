@@ -1,3 +1,30 @@
+
+.profilebox{
+    min-width: 50%;
+    max-width: 95%;
+    background-color: #61a2ec00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 5px;
+    border-radius: 4px;
+    
+}
+.profileimg{
+    height: 80px;
+    width: 80px;
+    align-items: center;
+    display: flex;
+}
+.profileimg img{
+    height: inherit;
+    width: inherit;
+    border-radius: 50%;
+}
+
+
+
 .homescreen{
     width: 100vw;
     height: calc(100vh - 30px);
@@ -9,17 +36,24 @@
 }
 .homescreenreflextion{
     rotate: 180deg;
-    transform: scale(-1.05,1.05);
+    transform: scale(-1,1.05);
     filter: brightness(40%);
     border: none;
-    filter: blur(5px);
+    filter: blur(2px);
     overflow: hidden;
+    z-index: 2;
+    box-shadow: none;
 }
 
-.homescreen h1{
-    font-size: 50px;
+.content{
     position: absolute;
     color: white;
+    width: 50%;
+    top: 20px;
+    /* color: #1a2c74; */
+}
+.content h1{
+    text-shadow: (1px 1px 1px 2px #ffff);
 }
 
 .homescreen img{
@@ -36,6 +70,7 @@
 .mountain1{
     animation: mountain1ani 1s;
     transform-origin: bottom;
+    /* z-index: 2; */
 }
 .mountain3{
     animation: mountain3ani 3s;
@@ -111,4 +146,49 @@
         transform: scale(1);
     }
     
+}
+.fontcolorred{
+    color: red;
+}
+.scrolltestbox{
+    height: 300vh;
+    width: 100vw;
+    z-index: 10;
+    background-color: rgb(153, 188, 219);
+    position: relative;
+}
+
+@media (min-width:668px) and (max-width:1168px) {
+    .homescreen{
+        height: 50vh;
+    }
+    .homescreen h1{
+        font-size: 20px;
+    }
+    .content{
+        width: 70%;
+        top: 10px;
+        font-size: small;
+        z-index: 1;
+        height: 50vh;
+    }
+}
+
+@media (max-width:668px) {
+    .homescreen{
+        height: 50vh;
+    }
+    .homescreenreflextion{
+        /* transform: scale(1); */
+    }
+    .homescreen h1{
+        font-size: 18px;
+    }
+    .content{
+        width: 95%;
+        top: 20px;
+        font-size: small;
+        z-index: 1;
+        height: 50vh;
+    }
 }
