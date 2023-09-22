@@ -1,0 +1,114 @@
+.homescreen{
+    width: 100vw;
+    height: calc(100vh - 30px);
+    background-color: rgb(153, 188, 219);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.homescreenreflextion{
+    rotate: 180deg;
+    transform: scale(-1.05,1.05);
+    filter: brightness(40%);
+    border: none;
+    filter: blur(5px);
+    overflow: hidden;
+}
+
+.homescreen h1{
+    font-size: 50px;
+    position: absolute;
+    color: white;
+}
+
+.homescreen img{
+    width: inherit;
+    height: inherit;
+    position: absolute;
+}
+.homescreenreflextion img{
+}
+
+.mountain2{
+    animation: mountain2ani 2s ;
+}
+.mountain1{
+    animation: mountain1ani 1s;
+    transform-origin: bottom;
+}
+.mountain3{
+    animation: mountain3ani 3s;
+}
+.clouds{
+    height: 250px !important;
+    width: 250px !important;
+    left:-25%;;
+    top: 10px;
+    opacity: 0.8;
+    filter: grayscale(0.5);
+    animation: clouds1 120s 20s ease-in-out infinite;
+}
+.clouds2{
+    opacity: 0.7;
+    filter: grayscale(0.5);
+    animation: clouds2 120s ease-in-out infinite;
+
+
+}
+@keyframes clouds1 {
+    from{
+        left: -25%;
+
+    }
+    to{
+        left: 100%;
+    }
+}
+@keyframes clouds2 {
+    from{
+        left: -70%;
+    }
+    
+    to{
+        left: 100%;
+    }
+}
+@keyframes mountain3ani {
+    0%{
+        opacity: 0;
+    }
+    33%{
+        opacity: 0;
+    }
+    66%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+@keyframes mountain2ani {
+    0%{
+        visibility: hidden;
+        bottom: -100%;
+    }
+50%{
+    visibility: visible;
+    bottom: -100%;
+
+}
+100%{
+        bottom: 0;
+    }
+    
+}
+@keyframes mountain1ani {
+    from{
+        transform: scale(0);
+    }to{
+        transform: scale(1);
+    }
+    
+}
