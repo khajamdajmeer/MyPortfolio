@@ -18,24 +18,35 @@ const Navbar = () => {
   }
 
 
-const handleabout= ()=>{
-  const targetElement = document.getElementById('');
+// const handleabout= ()=>{
+//   const targetElement = document.getElementById('');
 
-  if (targetElement) {
-    const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-  
+//   if (targetElement) {
+//     const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+//     window.scrollTo({
+//       top: elementPosition,
+//       behavior: 'smooth', // for smooth scrolling
+//     });
+//   }
+// }
+const handleHome = ()=>{
+  const navbar = document.getElementById('homebtn');
+  if(navbar){
+    const navbarpostion = navbar.getBoundingClientRect().top+window.scrollY+10;
     window.scrollTo({
-      top: elementPosition,
+      top: navbarpostion,
       behavior: 'smooth', // for smooth scrolling
     });
   }
 }
-const handleHome = ()=>{
-  const navbar = document.getElementById('homebtn');
-  if(navbar){
-    const navbarpostion = navbar.getBoundingClientRect().top+window.scrollY;
+
+
+const handleprojects = ()=>{
+  const project = document.getElementById('projectshead')
+  if(project){
+    const projectposition = project.getBoundingClientRect().top+window.screenY;
     window.scrollTo({
-      top: navbarpostion,
+      top: projectposition,
       behavior: 'smooth', // for smooth scrolling
     });
   }
@@ -58,7 +69,7 @@ const handleHome = ()=>{
       <ul className="menu">
             <li onClick={handleHome}>Home</li>
             <li >About</li>
-            <li>Projects</li>
+            <li onClick={handleprojects}>Projects</li>
             <li>Contact</li>
             <li>Social Media</li>
             <li>Form</li>
