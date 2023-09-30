@@ -1,13 +1,15 @@
 import './App.css';
-import Homepage from './Components/Homepage/Homepage';
+import About from './Components/About/About';
+import NewHome from './Components/NewHome/NewHome';
 import Projects from './Components/Projects/Projects';
 // import Navbar from './Components/Navbar/Navbar';
 
 function App() {
   return (
 <>
-
-<Homepage/>
+{/* <Homepage/> */}
+<NewHome/>
+<About/>
 <Projects/>
 </>
   );

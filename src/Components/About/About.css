@@ -1,0 +1,124 @@
+.aboutcontainer{
+    width: 100vw;
+    min-height: 80vh;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px;
+    margin-bottom: 30px;
+    background-color: #EEF4F9;
+border-top: 3px solid #03055e8c;
+
+}
+.aboutfullcard{
+    display: flex;
+    width: 90%;
+    max-width: 900px;
+    height: max-content;
+    box-shadow: 2px 8px 16px 15px #00000014;
+    border-radius: 20px;
+}
+
+.aboutcard{
+display: flex;
+justify-content: center;
+    align-items: center;
+    position: relative;
+border-top-left-radius: 20px;
+border-bottom-left-radius: 20px;
+
+}
+.aboutcard img{
+    border-top-left-radius: 20px;
+border-bottom-left-radius: 20px;
+}
+
+
+
+.about-dev{
+    height: 200px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EEF4F9;
+    border-radius: 50%;
+    box-shadow: 1px 2px 10px 8px #00000019;
+    position: absolute;
+    bottom: -60px;
+    right: -60px;
+}
+@keyframes rotate {
+ 100%{
+    transform: rotate(1turn);
+ }
+}
+.about-dev img{
+    animation: rotate 9s linear infinite;
+
+    border-radius: 50%;
+}
+.centerdevimg{
+    width: 400px;
+    height: 400px;
+}
+.aboutinfotag{
+  text-transform: capitalize;
+    padding: 10px 8px;
+    padding-left: 50px;
+}
+.aboutinfotag h2{
+    width: 100%;
+    color: #03045E;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 36px;
+}
+.aboutinfotag h3{
+    width: 100%;
+    color: #03045E;
+    font-size: 28px;
+    font-family: 'Itim', cursive;
+    padding: 15px 0;
+}
+.aboutinfotag p{
+    width: 100%;
+    color: hsla(0, 0%, 0%, 0.65);
+    text-align: justify;
+    font-family: 'Marhey', cursive;
+    font-size: 13px;
+}
+
+@media (max-width:950px) {
+    
+
+    .aboutfullcard{
+        flex-direction: column;
+        width: 70%;
+    }
+    .aboutcard img{
+        width: 100%;
+        height:inherit;
+    }
+    .aboutinfotag{
+        padding: 20px 10px;
+    } 
+}
+
+@media (max-width:599px) {
+    .aboutfullcard{
+        width: 70%;
+    }
+    .aboutinfotag h2{
+        font-size: 24px;
+    }
+    .aboutinfotag h3{
+        font-size: 18px;
+    }
+    .aboutinfotag p{
+        font-size: 12px;
+    }
+    .about-dev{
+        transform: scale(0.7);
+    }
+}

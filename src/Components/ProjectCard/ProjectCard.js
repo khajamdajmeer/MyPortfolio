@@ -20,9 +20,9 @@ const ProjectCard = (props) => {
               <a className='checkoutbtn' href={props.link ? props.link :'/'} rel='noreferrer' target="_blank">Live Demo &nbsp;<img src={arrowbox} alt="" /></a>
               <a className='checkoutbtn' href={props.gitlink ? props.gitlink : '#'} rel='noreferrer' target="_blank"> Code &nbsp;<img src={giticon} alt="git" id='giticon'/></a>
             </div>
-            <strong>
+            {/* <strong>
             Discription
-            </strong>
+            </strong> */}
             <p>{props.discription ? props.discription:lorem}</p>
         </div>
       </div>

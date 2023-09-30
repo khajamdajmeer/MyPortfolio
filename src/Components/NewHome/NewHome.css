@@ -1,0 +1,151 @@
+.homepagecontainer{
+    background-color: #EEF4F9;
+    width: 100%;
+    min-height: 90vh;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.myhomebox{
+    width: 60%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.homeprfileimg{
+    height: 100%;
+    width: 30%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.homeinfo{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.intorpara{
+}
+
+
+.introhead{
+    font-size: 64px;
+    width: 100%;
+}
+.homeinfo h1{
+    color: #03045E;
+    font-family: 'Itim', cursive;
+}
+.homeinfo p{
+    color: hsla(0, 0%, 0%, 0.65);
+    margin-bottom: 5px;
+    
+    font-family: 'Marhey', cursive;
+}
+
+.fontcolorred{
+    color: red;
+}
+
+.sociallinks{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 2px 10px;
+    z-index: 5;
+}
+.mysociallinks img:hover{
+    box-shadow: 2px 2px 10px #0000;
+}
+.mysociallinks{
+    height: inherit !important;
+    /* width: 30px !important; */
+    cursor: pointer !important;
+}
+.mysociallinks img{
+    height: inherit !important;
+    width: inherit !important;
+    cursor: pointer !important;
+    padding: 0 10px;
+}
+.skillsbox{
+    margin-top: 10px;
+    width: 100%;
+    min-height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0;
+    font-size: 32px;
+    font-weight: bold;
+    color: #03045E;
+    height: min-content;
+    font-family: 'Exo 2', sans-serif;
+    
+
+}
+#reactlogo{
+    border-radius: 50%;
+}
+.skillsbox img{
+    height: 60px;
+    width: auto;
+    padding: 0 10px;
+    transition: 0.3s;
+}
+.skilllogos:hover{
+    transform: scale(1.1);
+}
+@media  (max-width:800px) {
+    .homepagecontainer{
+        min-height: 80vh;
+        height: auto;
+        padding: 20px 0;
+    }
+    .myhomebox{
+        flex-direction: column-reverse;
+        width: 90%;
+    }
+    .homeprfileimg{
+        width: 40%;
+    }
+    .homeinfo{
+        width: 90%;
+    }
+    .introhead{
+        font-size: 40px;
+    }
+
+}
+@media (max-width:500px) {
+    .myhomebox{
+width: 100%;
+    }
+    .homeprfileimg{
+        width: 50%;
+    }
+    .introhead{
+        font-size: 32px;
+    }
+    .intorpara{
+        font-size: 14px;
+        
+    }
+    .skillsbox{
+        font-size: 24px;
+    }
+    .skillsbox img{
+        height: 40px ;
+        width: auto;
+        padding: 10px ;
+    }
+}

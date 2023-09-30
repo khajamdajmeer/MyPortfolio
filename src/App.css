@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500&family=Kalam&family=Marhey&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500&family=Itim&family=Jockey+One&family=Jomolhari&family=Jost&family=Kalam:wght@300;400&family=Marhey&display=swap');
 *{
   margin:0 ;
   padding: 0;
 }
+
 body{
   overflow-x: hidden;
+  background-color: #EEF4F9;
+
 }
 html{
   scroll-behavior: smooth;
@@ -19,6 +25,6 @@ html{
   background-color: #012732;
 }
 ::-webkit-scrollbar-thumb{
-  background-color: #5991db;
+  background-color: aliceblue;
   border-radius: 30px;
 }

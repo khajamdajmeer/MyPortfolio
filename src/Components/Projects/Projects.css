@@ -2,22 +2,26 @@
     width: unset;
     padding-top: 20px;
     z-index: 10;
-    background-color: aliceblue;
+    background-color: #EEF4F9;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin-bottom: 30px;
 }
 .projectheading{
-    background-color: aliceblue;
 
     padding-top: 20px;
     width: 100%;
     text-align: center;
     position: relative;
     z-index: 10;
-
+color: #03045E;
+font-size: 40px;
+font-family: 'Itim', cursive;
+background-color: #EEF4F9;
+border-top: 3px solid #03055e8c;
 }
 .canvas{
     color: black;

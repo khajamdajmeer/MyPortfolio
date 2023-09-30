@@ -30,7 +30,17 @@ const Navbar = () => {
 //   }
 // }
 const handleHome = ()=>{
-  const navbar = document.getElementById('homebtn');
+  const navbar = document.getElementById('newhome');
+  if(navbar){
+    const navbarpostion = navbar.getBoundingClientRect().top+window.scrollY+10;
+    window.scrollTo({
+      top: navbarpostion,
+      behavior: 'smooth', // for smooth scrolling
+    });
+  }
+}
+const handleAbout = ()=>{
+  const navbar = document.getElementById('iamabout');
   if(navbar){
     const navbarpostion = navbar.getBoundingClientRect().top+window.scrollY+10;
     window.scrollTo({
@@ -68,11 +78,9 @@ const handleprojects = ()=>{
       <div  id='hammenu' onClick={handleHammenu}>
       <ul className="menu">
             <li onClick={handleHome}>Home</li>
-            <li >About</li>
+            <li onClick={handleAbout} >About</li>
             <li onClick={handleprojects}>Projects</li>
             <li>Contact</li>
-            <li>Social Media</li>
-            <li>Form</li>
         </ul>
       </div>
       </nav>
