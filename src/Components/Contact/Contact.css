@@ -74,6 +74,11 @@ gap: 20px;
     color: #EEF4F9;
     text-align: center;
 }
+.maillink:hover{
+    cursor: pointer;
+    color: #000000c3;
+    text-decoration: underline;
+}
 
 @media (max-width:599px) {
     .containbox h2{
@@ -84,5 +89,8 @@ gap: 20px;
     }
     .footer h3{
         font-size: 12px;
+    }
+    .containbox{
+        width: 90%;
     }
 }
