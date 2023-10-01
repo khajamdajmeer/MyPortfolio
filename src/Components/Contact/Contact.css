@@ -1,0 +1,88 @@
+.contact-container{
+    width: 100vw;
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+border-top: 3px solid #03055e6b;
+
+}
+.containbox{
+    width: 70%;
+}
+.containbox h2{
+    color: #03045E;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 36px;
+padding: 10px 0;
+}
+.containbox p{
+    color: #03045E;
+    font-size: 28px;
+    font-family: 'Itim', cursive;
+}
+.contactinfo{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+.cinfo{
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 20px;
+}
+.cinfologo{
+    background-color: #EEF4F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 1px 2px 5px 2px #0000006b;
+    border-radius: 50%;
+}
+.cinfodetails h3{
+    color: #03045E;
+   font-size: 24px;
+    font-family: 'Jockey One', sans-serif;
+}
+.cinfodetails{
+    font-family: 'Marhey', cursive;
+}
+.contactlogos{
+    color: #03045E;
+    font-size: 32px;
+    font-weight: bold;
+    
+}
+.maillink{
+    text-decoration: none;
+    color: #000000c5;
+}
+.footer{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #03045E;
+    
+}
+.footer h3{
+    font-family: 'Marhey', cursive;
+    font-size: 1em;
+    color: #EEF4F9;
+    text-align: center;
+}
+
+@media (max-width:599px) {
+    .containbox h2{
+        font-size: 32px;
+    }
+    .containbox p{
+        font-size: 20px;
+    }
+    .footer h3{
+        font-size: 12px;
+    }
+}

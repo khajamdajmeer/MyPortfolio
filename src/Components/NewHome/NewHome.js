@@ -24,7 +24,7 @@ const NewHome = () => {
 {/* <p>Hi, I'm <span className='fontcolorred'>A</span>jmeer <span className='fontcolorred'>K</span>haja a passionate web developer fresh out of college with a degree in Computer Science Engineering
      I am excited to embark on a career path in web development, focusing on creating impactful and user
     friendly experiences.</p> */}
-    <p className='intorpara'>Hi, I'm Ajmeer Khaja. A Passionate Web Developer Based in Hyderabad,Telengana. 
+    <p className='intorpara'>Hi, I'm Ajmeer Khaja. A Passionate Web Developer Based in Hyderabad,Telangana. 
      <span class="material-symbols-outlined">
 pin_drop
 </span> </p>

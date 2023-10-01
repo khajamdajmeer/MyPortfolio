@@ -18,17 +18,7 @@ const Navbar = () => {
   }
 
 
-// const handleabout= ()=>{
-//   const targetElement = document.getElementById('');
 
-//   if (targetElement) {
-//     const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-//     window.scrollTo({
-//       top: elementPosition,
-//       behavior: 'smooth', // for smooth scrolling
-//     });
-//   }
-// }
 const handleHome = ()=>{
   const navbar = document.getElementById('newhome');
   if(navbar){
@@ -61,6 +51,16 @@ const handleprojects = ()=>{
     });
   }
 }
+const handleContact = ()=>{
+  const project = document.getElementById('iamcontactpage')
+  if(project){
+    const projectposition = project.getBoundingClientRect().top+window.screenY;
+    window.scrollTo({
+      top: projectposition,
+      behavior: 'smooth', // for smooth scrolling
+    });
+  }
+}
 
 
   return (
@@ -80,7 +80,7 @@ const handleprojects = ()=>{
             <li onClick={handleHome}>Home</li>
             <li onClick={handleAbout} >About</li>
             <li onClick={handleprojects}>Projects</li>
-            <li>Contact</li>
+            <li onClick={handleContact}>Contact</li>
         </ul>
       </div>
       </nav>
