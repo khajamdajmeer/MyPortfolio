@@ -22,8 +22,8 @@ const ProjectCard = (props) => {
         <div className="stack">BootStrap</div>
       </div>
       <div className="buttons">
-        <a className='btnicons'><img src={giticon} alt="" /> Code</a>
-        <a className='btnicons'><img src={arrowbox} alt="" /> Live demo</a>
+        <a className='btnicons' href='https://github.com/khajamdajmeer/CarRental.git' target='_blank'><img src={giticon} alt="" /> Code</a>
+        <a className='btnicons' href='https://carrental-ka80.onrender.com/' target='_blank'><img src={arrowbox} alt="" /> Live demo</a>
       </div>
     </div>
    </div>
