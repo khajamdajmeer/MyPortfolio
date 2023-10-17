@@ -6,7 +6,6 @@ import carproject from '../../images/carproject.jpeg';
 const ProjectCard = (props) => {
 
 
-  const lorem = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis vel pariatur quasi veniam, magni eius aut ab quidem dicta voluptatibus praesentium. In autem quibusdam ipsum tempora voluptas saepe, architecto suscipit."
   
   return (
    <>
