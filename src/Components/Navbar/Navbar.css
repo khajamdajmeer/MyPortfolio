@@ -24,7 +24,6 @@ align-items: center;
 .navbar ul{
     display: flex;
     flex-direction: column;
-    /* width: 100%; */
     list-style: none;
 }
 .navbar li{

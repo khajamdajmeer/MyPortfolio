@@ -8,7 +8,6 @@ import Projects from './Components/Projects/Projects';
 function App() {
   return (
 <>
-{/* <Homepage/> */}
 <NewHome/>
 <About/>
 <Projects/>

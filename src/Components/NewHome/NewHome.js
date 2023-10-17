@@ -19,18 +19,14 @@ const NewHome = () => {
       <div className="homepagecontainer" id='newhome'>
         <div className="myhomebox">
             <div className="homeinfo">
-{/* <h1>Welcome to my <span className='fontcolorred'>P</span>ortfolio! </h1> */}
 <h1 className='introhead'>Full Stack Web Developer</h1>
-{/* <p>Hi, I'm <span className='fontcolorred'>A</span>jmeer <span className='fontcolorred'>K</span>haja a passionate web developer fresh out of college with a degree in Computer Science Engineering
-     I am excited to embark on a career path in web development, focusing on creating impactful and user
-    friendly experiences.</p> */}
+
     <p className='intorpara'>Hi, I'm Ajmeer Khaja. A Passionate Web Developer Based in Hyderabad,Telangana. 
      <span class="material-symbols-outlined">
 pin_drop
 </span> </p>
 
     <div className="sociallinks" id='socialid'>
-      {/* <link href="/">iam here</link> */}
       <a href="https://www.linkedin.com/in/ajmeer-khaja-5398b9203"   rel='noreferrer' target='_blank' className="mysociallinks">
      <img src={linkedinlogo} alt="Linkedin" />
       </a>
