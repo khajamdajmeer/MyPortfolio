@@ -70,7 +70,7 @@ const handleContact = ()=>{
         
       
 
-      <div className="hamburgermenu"><button onClick={handleHammenu}>
+      <div className="hamburgermenu"><button style={{cursor:'pointer'}} onClick={handleHammenu}>
         <span class="material-symbols-outlined">
 {showicon}
 </span>

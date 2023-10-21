@@ -8,6 +8,11 @@
     border: 1px solid rgba(194, 188, 188, 0.801);
     border-radius: 20px;
     box-shadow: 1px 2px 5px 2px rgba(45, 45, 45, 0.427);
+    margin: 8px 0;
+    cursor: pointer;
+}
+.p-container-inverse{
+    flex-direction: row-reverse;
 }
 .p-left{
     width: 50%;
@@ -27,7 +32,7 @@ border-radius: 20px;
     transition: transform 6s ease-in-out 1s;
 
 }
-.p-left img:hover{
+.p-container:hover .p-left img{
     transform: translateY(-70%);
 
 }
@@ -50,7 +55,7 @@ padding: 10px;
 .stack{
     padding: 4px 10px;
     border: 1px solid gray;
-    margin: 0 2px;
+    margin: 2px 2px;
     font-weight: bolder;
     font-size: 24px;
     border-radius: 5px;
@@ -82,7 +87,7 @@ padding: 10px;
     filter: invert(1);
 }
 .btnicons:hover{
-box-shadow: 1px 2px 2px 2px #03045e;
+box-shadow: 1px 2px 20px 2px #03045e;
 }
 
 @media (max-width:850px) {
