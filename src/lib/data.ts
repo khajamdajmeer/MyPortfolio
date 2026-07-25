@@ -1,5 +1,6 @@
 import { isDbConfigured, query } from "./db";
 import {
+  RESUME_FILE,
   fallbackEducation,
   fallbackExperience,
   fallbackProfile,
@@ -111,8 +112,8 @@ function fallbackPayload(): PortfolioData {
     education: withIds(fallbackEducation),
     skills: withIds(fallbackSkills),
     resume: {
-      filename: "AjmeerKhajaResume.pdf",
-      external_url: "/AjmeerKhajaResume.pdf",
+      filename: RESUME_FILE.replace("/", ""),
+      external_url: RESUME_FILE,
       has_file: false,
       updated_at: null,
     },
@@ -162,8 +163,8 @@ export async function getPortfolio(): Promise<PortfolioData> {
           updated_at: String(resumeRows[0].updated_at),
         }
       : {
-          filename: "AjmeerKhajaResume.pdf",
-          external_url: "/AjmeerKhajaResume.pdf",
+          filename: RESUME_FILE.replace("/", ""),
+          external_url: RESUME_FILE,
           has_file: false,
           updated_at: null,
         };
