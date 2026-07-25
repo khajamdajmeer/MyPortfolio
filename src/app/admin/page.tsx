@@ -59,7 +59,7 @@ export default async function AdminPage() {
   if (!isAdminConfigured()) {
     return (
       <Shell>
-        <h1 className="text-2xl font-semibold text-bright">Admin is not set up</h1>
+        <h1 className="text-2xl font-semibold text-[var(--fg)]">Admin is not set up</h1>
         <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted">
           Set an <code className="font-mono text-accent">ADMIN_PASSWORD</code>{" "}
           environment variable on the project, then redeploy. Until it is set the
@@ -72,8 +72,8 @@ export default async function AdminPage() {
   if (!(await isAuthenticated())) {
     return (
       <Shell>
-        <div className="mx-auto max-w-sm rounded-2xl border border-line bg-surface p-8">
-          <h1 className="text-xl font-semibold text-bright">Admin</h1>
+        <div className="mx-auto max-w-sm rounded-2xl border border-[var(--line)] bg-[var(--card)] p-8">
+          <h1 className="text-xl font-semibold text-[var(--fg)]">Admin</h1>
           <p className="mb-6 mt-1 text-sm text-muted">
             Sign in to edit your portfolio.
           </p>
@@ -90,7 +90,7 @@ export default async function AdminPage() {
     <Shell>
       <header className="mb-10 flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-semibold tracking-tight text-bright">
+          <h1 className="text-3xl font-semibold tracking-tight text-[var(--fg)]">
             Portfolio admin
           </h1>
           <p className="mt-1 text-sm text-muted">
@@ -98,13 +98,13 @@ export default async function AdminPage() {
           </p>
         </div>
         <div className="flex items-center gap-4">
-          <Link href="/" className="text-sm text-muted transition-colors hover:text-bright">
+          <Link href="/" className="text-sm text-muted transition-colors hover:text-[var(--fg)]">
             View site ↗
           </Link>
           <form action={logout}>
             <button
               type="submit"
-              className="rounded-lg border border-line px-3 py-1.5 text-sm text-muted transition-colors hover:text-bright"
+              className="rounded-lg border border-[var(--line)] px-3 py-1.5 text-sm text-muted transition-colors hover:text-[var(--fg)]"
             >
               Sign out
             </button>
@@ -143,11 +143,11 @@ export default async function AdminPage() {
               {projects.map((project) => (
                 <li
                   key={project.id}
-                  className="rounded-xl border border-line bg-ink p-5"
+                  className="rounded-xl border border-[var(--line)] bg-[var(--bg)] p-5"
                 >
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div>
-                      <h3 className="font-medium text-bright">
+                      <h3 className="font-medium text-[var(--fg)]">
                         {project.title}
                         {project.featured ? (
                           <span className="ml-2 rounded-full bg-accent/15 px-2 py-0.5 font-mono text-[10px] uppercase text-accent">
@@ -176,10 +176,10 @@ export default async function AdminPage() {
           <Panel title={`Experience (${experience.length})`}>
             <ul className="space-y-4">
               {experience.map((job) => (
-                <li key={job.id} className="rounded-xl border border-line bg-ink p-5">
+                <li key={job.id} className="rounded-xl border border-[var(--line)] bg-[var(--bg)] p-5">
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div>
-                      <h3 className="font-medium text-bright">{job.role}</h3>
+                      <h3 className="font-medium text-[var(--fg)]">{job.role}</h3>
                       <p className="mt-1 text-sm text-muted">
                         {job.company} · {job.period}
                       </p>
@@ -205,11 +205,11 @@ export default async function AdminPage() {
               {education.map((school) => (
                 <li
                   key={school.id}
-                  className="rounded-xl border border-line bg-ink p-5"
+                  className="rounded-xl border border-[var(--line)] bg-[var(--bg)] p-5"
                 >
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div>
-                      <h3 className="font-medium text-bright">
+                      <h3 className="font-medium text-[var(--fg)]">
                         {school.institution}
                       </h3>
                       <p className="mt-1 text-sm text-muted">
@@ -234,7 +234,7 @@ export default async function AdminPage() {
               {skills.map((skill) => (
                 <li
                   key={skill.id}
-                  className="flex items-center gap-2 rounded-lg border border-line bg-ink px-3 py-1.5 text-sm text-body"
+                  className="flex items-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--bg)] px-3 py-1.5 text-sm text-body"
                 >
                   {skill.name}
                   <span className="font-mono text-[10px] text-muted">

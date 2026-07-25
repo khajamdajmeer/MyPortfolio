@@ -14,8 +14,11 @@ export type Profile = {
 export type Project = {
   id: number;
   title: string;
+  subtitle: string;
+  year: string;
   summary: string;
   description: string;
+  highlights: string[];
   tech: string[];
   live_url: string;
   repo_url: string;

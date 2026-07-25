@@ -23,6 +23,14 @@ function list(form: FormData, key: string) {
     .filter(Boolean);
 }
 
+/** Textarea where each line is one entry. */
+function lines(form: FormData, key: string) {
+  return str(form, key)
+    .split("\n")
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
 function refresh() {
   revalidatePath("/");
   revalidatePath("/admin");
@@ -102,8 +110,11 @@ export async function saveProject(
 
     const values = [
       title,
+      str(form, "subtitle"),
+      str(form, "year"),
       str(form, "summary"),
       str(form, "description"),
+      lines(form, "highlights"),
       list(form, "tech"),
       str(form, "live_url"),
       str(form, "repo_url"),
@@ -115,15 +126,16 @@ export async function saveProject(
     const id = num(form, "id", 0);
     if (id > 0) {
       await query(
-        `update projects set title=$1, summary=$2, description=$3, tech=$4,
-           live_url=$5, repo_url=$6, image_url=$7, featured=$8, sort_order=$9
-         where id=$10`,
+        `update projects set title=$1, subtitle=$2, year=$3, summary=$4, description=$5,
+           highlights=$6, tech=$7, live_url=$8, repo_url=$9, image_url=$10,
+           featured=$11, sort_order=$12
+         where id=$13`,
         [...values, id],
       );
     } else {
       await query(
-        `insert into projects (title, summary, description, tech, live_url, repo_url, image_url, featured, sort_order)
-         values ($1,$2,$3,$4,$5,$6,$7,$8,$9)`,
+        `insert into projects (title, subtitle, year, summary, description, highlights, tech, live_url, repo_url, image_url, featured, sort_order)
+         values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)`,
         values,
       );
     }

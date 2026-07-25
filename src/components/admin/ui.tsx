@@ -32,7 +32,7 @@ export function Field({
         defaultValue={defaultValue}
         placeholder={placeholder}
         required={required}
-        className="w-full rounded-lg border border-line bg-ink px-3 py-2 text-sm text-bright outline-none transition-colors placeholder:text-muted/60 focus:border-accent/60"
+        className="w-full rounded-lg border border-[var(--line)] bg-[var(--bg)] px-3 py-2 text-sm text-[var(--fg)] outline-none transition-colors placeholder:text-muted/60 focus:border-accent/60"
       />
       {hint ? <span className="mt-1 block text-xs text-muted">{hint}</span> : null}
     </label>
@@ -62,7 +62,7 @@ export function TextArea({
         rows={rows}
         defaultValue={defaultValue}
         placeholder={placeholder}
-        className="w-full resize-y rounded-lg border border-line bg-ink px-3 py-2 text-sm leading-relaxed text-bright outline-none transition-colors placeholder:text-muted/60 focus:border-accent/60"
+        className="w-full resize-y rounded-lg border border-[var(--line)] bg-[var(--bg)] px-3 py-2 text-sm leading-relaxed text-[var(--fg)] outline-none transition-colors placeholder:text-muted/60 focus:border-accent/60"
       />
     </label>
   );
@@ -96,7 +96,7 @@ export function SubmitButton({ children = "Save" }: { children?: React.ReactNode
     <button
       type="submit"
       disabled={pending}
-      className="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-ink transition-colors hover:bg-accent-deep disabled:opacity-50"
+      className="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-2 disabled:opacity-50"
     >
       {pending ? "Saving…" : children}
     </button>
@@ -131,8 +131,8 @@ export function Panel({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-2xl border border-line bg-surface p-6">
-      <h2 className="text-lg font-semibold text-bright">{title}</h2>
+    <section className="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-6">
+      <h2 className="text-lg font-semibold text-[var(--fg)]">{title}</h2>
       {description ? (
         <p className="mt-1 text-sm text-muted">{description}</p>
       ) : null}

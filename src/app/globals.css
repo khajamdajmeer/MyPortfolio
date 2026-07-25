@@ -1,102 +1,183 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-  --color-ink: #05060a;
-  --color-surface: #0a0c13;
-  --color-raised: #11141d;
-  --color-line: #1d2230;
-  --color-muted: #868ea3;
-  --color-body: #c5cbd9;
-  --color-bright: #f4f6fb;
-  --color-accent: #6ee7b7;
-  --color-accent-deep: #10b981;
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-display: var(--font-display);
 
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
-}
+  --color-ink-50: #f6f7f9;
+  --color-ink-100: #eceef2;
+  --color-ink-200: #d5dae3;
+  --color-ink-300: #b0b9c9;
+  --color-ink-400: #8593aa;
+  --color-ink-500: #67758f;
+  --color-ink-600: #515d75;
+  --color-ink-700: #424b5e;
+  --color-ink-800: #2a3040;
+  --color-ink-900: #171b26;
+  --color-ink-950: #0b0d14;
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
-}
+  --color-accent: #6366f1;
+  --color-accent-2: #22d3ee;
 
-body {
-  background-color: var(--color-ink);
-  color: var(--color-body);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-}
+  --animate-marquee: marquee 38s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
 
-::selection {
-  background: color-mix(in oklab, var(--color-accent) 32%, transparent);
-  color: var(--color-bright);
-}
-
-/* Ambient glow behind the hero. */
-.aurora {
-  background:
-    radial-gradient(
-      42rem 26rem at 18% -10%,
-      color-mix(in oklab, var(--color-accent) 14%, transparent),
-      transparent 70%
-    ),
-    radial-gradient(
-      34rem 22rem at 92% 6%,
-      color-mix(in oklab, #6366f1 16%, transparent),
-      transparent 70%
-    );
-}
-
-.grid-lines {
-  background-image:
-    linear-gradient(
-      to right,
-      color-mix(in oklab, var(--color-line) 55%, transparent) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      to bottom,
-      color-mix(in oklab, var(--color-line) 55%, transparent) 1px,
-      transparent 1px
-    );
-  background-size: 4rem 4rem;
-  mask-image: radial-gradient(60% 50% at 50% 0%, #000 0%, transparent 100%);
-}
-
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
   }
-  to {
-    opacity: 1;
-    transform: none;
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
   }
 }
 
-/* Scroll-linked entrance where supported; a plain fade-in elsewhere. */
-@supports (animation-timeline: view()) {
-  .rise {
-    animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 24%;
+@layer base {
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #f6f7f9;
+    --fg: #171b26;
+    --fg-muted: #515d75;
+    --line: rgb(23 27 38 / 0.1);
+    --card: rgb(255 255 255 / 0.7);
+    --glow-a: rgb(99 102 241 / 0.16);
+    --glow-b: rgb(34 211 238 / 0.14);
   }
-}
 
-@media (prefers-reduced-motion: reduce) {
+  .dark {
+    --bg: #0b0d14;
+    --bg-soft: #10131c;
+    --fg: #eceef2;
+    --fg-muted: #8593aa;
+    --line: rgb(236 238 242 / 0.1);
+    --card: rgb(255 255 255 / 0.03);
+    --glow-a: rgb(99 102 241 / 0.22);
+    --glow-b: rgb(34 211 238 / 0.16);
+  }
+
+  * {
+    border-color: var(--line);
+  }
+
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
+    /* offset for the fixed header when jumping to a section */
+    scroll-padding-top: 6rem;
   }
 
-  .rise {
-    animation: none;
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
   }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@utility text-muted {
+  color: var(--fg-muted);
+}
+
+/*
+ * Hero entrance. Deliberately CSS rather than JS: it's above the fold, so the
+ * content must not wait on a bundle to become visible. Stagger by setting
+ * --rise-delay on each element.
+ */
+@utility rise-in {
+  animation: rise-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--rise-delay, 0s);
+}
+
+/*
+ * Card fill. No backdrop-filter here: these sit on an opaque page background,
+ * so blurring buys nothing and only costs a compositing layer. The header,
+ * which really does overlap content, blurs via its own classes.
+ */
+@utility surface {
+  background-color: var(--card);
+  border: 1px solid var(--line);
+}
+
+/* Soft ambient light bloom used behind the hero and section headers */
+@utility ambient {
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -20% -10% auto -10%;
+    height: 60vh;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(45rem 22rem at 22% 18%, var(--glow-a), transparent 70%),
+      radial-gradient(38rem 20rem at 82% 8%, var(--glow-b), transparent 70%);
+    filter: blur(8px);
+  }
+}
+
+@utility grid-lines {
+  background-image:
+    linear-gradient(to right, var(--line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, #000 30%, transparent 75%);
+}
+
+@utility gradient-text {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-accent) 0%,
+    var(--color-accent-2) 55%,
+    var(--color-accent) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

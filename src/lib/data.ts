@@ -49,12 +49,15 @@ export async function seedIfEmpty() {
 
   for (const project of fallbackProjects) {
     await query(
-      `insert into projects (title, summary, description, tech, live_url, repo_url, image_url, featured, sort_order)
-       values ($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
+      `insert into projects (title, subtitle, year, summary, description, highlights, tech, live_url, repo_url, image_url, featured, sort_order)
+       values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`,
       [
         project.title,
+        project.subtitle,
+        project.year,
         project.summary,
         project.description,
+        project.highlights,
         project.tech,
         project.live_url,
         project.repo_url,

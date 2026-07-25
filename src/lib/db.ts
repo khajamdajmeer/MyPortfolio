@@ -68,6 +68,10 @@ const DDL = [
      category text default 'General',
      sort_order integer not null default 0
    )`,
+  // added after the first release — the project cards grew a subtitle, year and highlight list
+  `alter table projects add column if not exists subtitle text default ''`,
+  `alter table projects add column if not exists year text default ''`,
+  `alter table projects add column if not exists highlights text[] not null default '{}'`,
   `create table if not exists resume (
      id integer primary key default 1,
      filename text not null default 'resume.pdf',

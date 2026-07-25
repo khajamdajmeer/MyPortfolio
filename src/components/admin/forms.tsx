@@ -93,6 +93,19 @@ export function ProjectForm({ project }: { project?: Project }) {
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label="Title" name="title" defaultValue={project?.title} required />
         <Field
+          label="Subtitle"
+          name="subtitle"
+          defaultValue={project?.subtitle}
+          placeholder="Agentic analytics"
+          hint="Small label above the title."
+        />
+        <Field
+          label="Year"
+          name="year"
+          defaultValue={project?.year}
+          placeholder="2025"
+        />
+        <Field
           label="Tech"
           name="tech"
           defaultValue={project?.tech?.join(", ")}
@@ -126,6 +139,13 @@ export function ProjectForm({ project }: { project?: Project }) {
         defaultValue={project?.description}
         rows={4}
       />
+      <TextArea
+        label="Highlights — one per line"
+        name="highlights"
+        defaultValue={project?.highlights?.join("\n")}
+        rows={4}
+        placeholder={"Indexed 10,000+ documents\nCut search turnaround by 30%"}
+      />
       <Checkbox label="Feature this project" name="featured" defaultChecked={project?.featured} />
       <Feedback state={state} />
       <div className="flex gap-3">
@@ -134,7 +154,7 @@ export function ProjectForm({ project }: { project?: Project }) {
           <button
             type="button"
             onClick={() => setOpen(false)}
-            className="rounded-lg border border-line px-4 py-2 text-sm text-muted transition-colors hover:text-bright"
+            className="rounded-lg border border-[var(--line)] px-4 py-2 text-sm text-muted transition-colors hover:text-[var(--fg)]"
           >
             Cancel
           </button>
@@ -191,7 +211,7 @@ export function ExperienceForm({ item }: { item?: Experience }) {
           <button
             type="button"
             onClick={() => setOpen(false)}
-            className="rounded-lg border border-line px-4 py-2 text-sm text-muted transition-colors hover:text-bright"
+            className="rounded-lg border border-[var(--line)] px-4 py-2 text-sm text-muted transition-colors hover:text-[var(--fg)]"
           >
             Cancel
           </button>
@@ -247,7 +267,7 @@ export function EducationForm({ item }: { item?: Education }) {
           <button
             type="button"
             onClick={() => setOpen(false)}
-            className="rounded-lg border border-line px-4 py-2 text-sm text-muted transition-colors hover:text-bright"
+            className="rounded-lg border border-[var(--line)] px-4 py-2 text-sm text-muted transition-colors hover:text-[var(--fg)]"
           >
             Cancel
           </button>
@@ -288,7 +308,7 @@ export function ResumeForm({ externalUrl }: { externalUrl: string }) {
           type="file"
           name="file"
           accept="application/pdf"
-          className="w-full rounded-lg border border-line bg-ink px-3 py-2 text-sm text-body file:mr-3 file:rounded-md file:border-0 file:bg-raised file:px-3 file:py-1.5 file:text-sm file:text-bright"
+          className="w-full rounded-lg border border-[var(--line)] bg-[var(--bg)] px-3 py-2 text-sm text-body file:mr-3 file:rounded-md file:border-0 file:bg-[var(--bg-soft)] file:px-3 file:py-1.5 file:text-sm file:text-[var(--fg)]"
         />
         <span className="mt-1 block text-xs text-muted">
           Stored in the database and served at /resume. Max 8 MB.
