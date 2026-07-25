@@ -98,7 +98,7 @@ export const fallbackProjects: Omit<Project, "id">[] = [
       "JWT",
       "Swagger",
     ],
-    live_url: "https://clientmhb-aka-2930.vercel.app",
+    live_url: "https://mhb-services-aka-2930.vercel.app",
     repo_url: "https://github.com/khajamdajmeer/clientMHB",
     image_url: "",
     featured: true,
