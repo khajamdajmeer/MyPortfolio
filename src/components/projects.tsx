@@ -34,8 +34,14 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       variants={staggerChild}
       className="group relative grid overflow-hidden rounded-3xl border surface lg:grid-cols-2"
     >
+      {/*
+        Fixed aspect on small screens, stretched to the text column on large.
+        The screenshots are full-page captures, so the image is absolutely
+        positioned and cropped from the top — otherwise its natural height
+        drives the whole card and the layout balloons.
+      */}
       <div
-        className={`relative overflow-hidden bg-[var(--bg-soft)] lg:h-full ${
+        className={`relative aspect-16/10 overflow-hidden bg-[var(--bg-soft)] lg:aspect-auto lg:h-full ${
           visualFirst ? "" : "lg:order-2"
         }`}
       >
@@ -43,10 +49,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           <Image
             src={project.image_url}
             alt={`${project.title} — screenshot`}
-            width={1568}
-            height={759}
+            fill
             sizes="(max-width: 1024px) 100vw, 600px"
-            className="aspect-16/10 w-full object-cover object-left-top transition-transform duration-700 ease-out group-hover:scale-[1.035] lg:aspect-auto lg:h-full"
+            className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.035]"
           />
         ) : (
           <ProjectGlyph project={project} index={index} />
@@ -142,7 +147,7 @@ function ProjectGlyph({ project, index }: { project: Project; index: number }) {
   const marks = project.tech.slice(0, 6);
 
   return (
-    <div className="relative flex aspect-16/10 w-full items-center justify-center overflow-hidden lg:aspect-auto lg:h-full">
+    <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
       <div className="pointer-events-none absolute inset-0 grid-lines opacity-60" aria-hidden />
       <div
         className="pointer-events-none absolute -top-10 -right-10 size-64 rounded-full bg-accent/15 blur-3xl"

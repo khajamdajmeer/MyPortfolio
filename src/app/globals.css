@@ -147,11 +147,14 @@
 @utility ambient {
   position: relative;
   isolation: isolate;
+  /* the bloom below bleeds past the section edges — clip it so it can never
+     widen the document and introduce a horizontal scrollbar */
+  overflow-x: clip;
 
   &::before {
     content: "";
     position: absolute;
-    inset: -20% -10% auto -10%;
+    inset: -20% 0 auto 0;
     height: 60vh;
     z-index: -1;
     pointer-events: none;
